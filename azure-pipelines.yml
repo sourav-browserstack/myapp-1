@@ -14,8 +14,19 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'BrowserStack Connection'
+    browserstackLocal: true
 - script: |
     npm install
-    npm run build
-  displayName: 'npm install and build'
+    npm start &
+  displayName: 'npm install start node based web application'
+
+- script: |
+    gem install selenium-webdriver
+    ruby testScripts/automate_test.rb
+  displayName: 'install ruby dependency and run ruby test script'
+
+- task: BrowserStackStopLocal@0
+- task: BrowserStackResults@0
