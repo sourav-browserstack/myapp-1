@@ -32,4 +32,5 @@ steps:
   displayName: 'install ruby dependency and run ruby test script'
 
 - task: BrowserStackStopLocal@0
-- task: BrowserStackResults@0
+- task: browserstackcom.browserstack-vsts-extension.reports-task.BrowserStackResults@0
+  displayName: 'If BrowserStack Results works'
