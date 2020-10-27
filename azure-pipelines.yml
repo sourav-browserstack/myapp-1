@@ -19,6 +19,7 @@ steps:
     BrowserStackServiceEndPoint: 'BrowserStack Connection'
     browserstackLocal: true
 - script: |
+    npm rebuild
     npm install
     npm start &
   displayName: 'npm install start node based web application'
