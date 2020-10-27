@@ -22,7 +22,9 @@ steps:
     npm install
     npm start &
   displayName: 'npm install start node based web application'
-
+- task: UseRubyVersion@0
+  inputs:
+    versionSpec: '>= 2.4'
 - script: |
     gem install selenium-webdriver
     ruby testScripts/automate_test.rb
